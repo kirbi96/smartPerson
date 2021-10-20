@@ -9,6 +9,9 @@ import {IconSvgTabHome} from '../../assets/icons/tab/IconSvgTabHome';
 import {IconSvgTabProfile} from '../../assets/icons/tab/IconSvgTabProfile';
 import {HomeScreen} from '../../screens/tabs/home/HomeScreen';
 import {IconSvgTabRating} from '../../assets/icons/tab/IconSvgTabRating';
+import {ProfileScreen} from '../../screens/tabs/profile/ProfileScreen';
+import {HistoryScreen} from '../../screens/tabs/history/HistoryScreen';
+import {RatingScreen} from '../../screens/tabs/rating/RatingScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -29,7 +32,7 @@ export const Tabs = () => {
 
       <Tab.Screen
         name={screens.tab.TAB_SEARCH}
-        component={HomeScreen}
+        component={HistoryScreen}
         options={{
           tabBarActiveTintColor: Colors.blue,
           tabBarLabel: 'Истории',
@@ -39,7 +42,7 @@ export const Tabs = () => {
 
       <Tab.Screen
         name={screens.tab.TAB_HISTORY}
-        component={HomeScreen}
+        component={RatingScreen}
         options={{
           tabBarActiveTintColor: Colors.blue,
           tabBarLabel: 'Рейтинг',
@@ -49,7 +52,7 @@ export const Tabs = () => {
 
       <Tab.Screen
         name={screens.tab.TAB_PROFILE}
-        component={HomeScreen}
+        component={ProfileScreen}
         options={{
           tabBarActiveTintColor: Colors.blue,
           tabBarLabel: 'Профиль',
