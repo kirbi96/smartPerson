@@ -15,6 +15,11 @@ import {RatingScreen} from '../../screens/tabs/rating/RatingScreen';
 
 const Tab = createBottomTabNavigator();
 
+const tabBarLabelStyle = {
+  fontFamily: 'Mipgost',
+  fontSize: 14,
+};
+
 export const Tabs = () => {
   return (
     <Tab.Navigator
@@ -25,6 +30,7 @@ export const Tabs = () => {
         component={HomeScreen}
         options={{
           tabBarActiveTintColor: Colors.blue,
+          tabBarLabelStyle,
           tabBarLabel: 'Задания',
           tabBarIcon: ({focused}) => <IconSvgTabHome />,
         }}
@@ -35,6 +41,7 @@ export const Tabs = () => {
         component={HistoryScreen}
         options={{
           tabBarActiveTintColor: Colors.blue,
+          tabBarLabelStyle,
           tabBarLabel: 'Истории',
           tabBarIcon: ({focused}) => <IconSvgTabLove />,
         }}
@@ -45,6 +52,7 @@ export const Tabs = () => {
         component={RatingScreen}
         options={{
           tabBarActiveTintColor: Colors.blue,
+          tabBarLabelStyle,
           tabBarLabel: 'Рейтинг',
           tabBarIcon: ({focused}) => <IconSvgTabRating />,
         }}
@@ -55,6 +63,7 @@ export const Tabs = () => {
         component={ProfileScreen}
         options={{
           tabBarActiveTintColor: Colors.blue,
+          tabBarLabelStyle,
           tabBarLabel: 'Профиль',
           tabBarIcon: ({focused}) => <IconSvgTabProfile />,
         }}

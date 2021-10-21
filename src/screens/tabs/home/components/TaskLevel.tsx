@@ -1,6 +1,5 @@
 import React from 'react';
 import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
-import {IconSvgTabHome} from '../../../../assets/icons/tab/IconSvgTabHome';
 import {Colors} from '../../../../styles/Colors';
 import {TaskHelper} from '../../../../helpers/TaskHelper';
 import {AgEnum, Text} from '../../../../components/ui/Text';
@@ -20,6 +19,7 @@ export const TaskLevel = (props: ITaskLevel) => {
         <View
           style={[styles.taskItem, {width: TaskHelper.firstLevel(index)}]}
           key={index}>
+          {/*<View style={[styles.taskBorder, {borderColor: true ? Colors.yellow : Colors.gray300}]}>*/}
           <View style={[styles.taskBorder, {borderColor: Colors.gray300}]}>
             <TouchableOpacity
               style={[styles.taskContainer, {backgroundColor: color}]}
@@ -29,6 +29,9 @@ export const TaskLevel = (props: ITaskLevel) => {
                 source={require('../../../../assets/images/car.png')}
               />
               <View style={styles.crown}>
+                <Text style={styles.taskNumber} Ag={AgEnum.Description}>
+                  1
+                </Text>
                 <Image
                   style={{width: 20, height: 26}}
                   source={require('../../../../assets/images/crown.png')}
@@ -87,6 +90,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     zIndex: 2,
+  },
+  taskNumber: {
+    position: 'absolute',
+    zIndex: 2,
+    top: 6,
+    left: 8,
   },
   endIcon: {
     width: 80,
