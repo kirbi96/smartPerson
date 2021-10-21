@@ -2,9 +2,11 @@ export const screens = {
   MAIN_APP: 'MAIN_APP',
 
   tab: {
-    TAB_NEWS: 'TAB_NEWS',
-    TAB_SEARCH: 'TAB_SEARCH',
+    TAB_HOME: 'TAB_NEWS',
     TAB_HISTORY: 'TAB_HISTORY',
+    TAB_RATING: 'TAB_RATING',
     TAB_PROFILE: 'TAB_PROFILE',
   },
+
+  TASK_IN: 'TASK_IN',
 };

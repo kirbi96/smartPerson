@@ -26,35 +26,35 @@ export const Tabs = () => {
       screenOptions={{headerShown: false}}
       initialRouteName={Navigation.initialRoute}>
       <Tab.Screen
-        name={screens.tab.TAB_NEWS}
+        name={screens.tab.TAB_HOME}
         component={HomeScreen}
         options={{
           tabBarActiveTintColor: Colors.blue,
           tabBarLabelStyle,
           tabBarLabel: 'Задания',
-          tabBarIcon: ({focused}) => <IconSvgTabHome />,
-        }}
-      />
-
-      <Tab.Screen
-        name={screens.tab.TAB_SEARCH}
-        component={HistoryScreen}
-        options={{
-          tabBarActiveTintColor: Colors.blue,
-          tabBarLabelStyle,
-          tabBarLabel: 'Истории',
-          tabBarIcon: ({focused}) => <IconSvgTabLove />,
+          tabBarIcon: () => <IconSvgTabHome />,
         }}
       />
 
       <Tab.Screen
         name={screens.tab.TAB_HISTORY}
+        component={HistoryScreen}
+        options={{
+          tabBarActiveTintColor: Colors.blue,
+          tabBarLabelStyle,
+          tabBarLabel: 'Истории',
+          tabBarIcon: () => <IconSvgTabLove />,
+        }}
+      />
+
+      <Tab.Screen
+        name={screens.tab.TAB_RATING}
         component={RatingScreen}
         options={{
           tabBarActiveTintColor: Colors.blue,
           tabBarLabelStyle,
           tabBarLabel: 'Рейтинг',
-          tabBarIcon: ({focused}) => <IconSvgTabRating />,
+          tabBarIcon: () => <IconSvgTabRating />,
         }}
       />
 
@@ -65,7 +65,7 @@ export const Tabs = () => {
           tabBarActiveTintColor: Colors.blue,
           tabBarLabelStyle,
           tabBarLabel: 'Профиль',
-          tabBarIcon: ({focused}) => <IconSvgTabProfile />,
+          tabBarIcon: () => <IconSvgTabProfile />,
         }}
       />
     </Tab.Navigator>

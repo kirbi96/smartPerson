@@ -15,7 +15,6 @@ interface IInput {
 
   handlePressOnIcon?: () => void;
   icon?: ReactNode;
-  secureTextEntry?: boolean;
   keyboardType?: any;
   inputKey: string;
   error: string | undefined;
@@ -33,7 +32,6 @@ const Input = ({
   value,
   onChangeText,
   editable = true,
-  secureTextEntry,
   keyboardType,
   error,
   inputKey,
@@ -46,17 +44,11 @@ const Input = ({
   ...props
 }: IInput) => {
   const input: any = useRef(null);
-  const [showSecure, setShowSecure] = useState(true);
 
   const handleChange = (text: string) => {
     if (!onChangeText) {
       return;
     }
-
-    // if (inputKey === 'phone' || inputKey === 'newPhone') {
-    //   onChangeText(DataHelper.getPhone(text), inputKey);
-    //   return;
-    // }
     onChangeText(text, inputKey);
   };
 
@@ -73,11 +65,7 @@ const Input = ({
         style={
           multiline
             ? [styles.inputContainer, {height: 137}]
-            : [
-                styles.inputContainer,
-                shadow && styles.shadowInput,
-                // input?.current?.isFocused() && {borderBottomColor: Colors.leaf}, @TODO: допилить
-              ]
+            : [styles.inputContainer, shadow && styles.shadowInput]
         }
         pointerEvents={!editable ? 'none' : 'auto'}>
         <TextInput
@@ -87,16 +75,10 @@ const Input = ({
           keyboardType={keyboardType ?? 'default'}
           value={value}
           multiline={multiline}
-          secureTextEntry={secureTextEntry ? showSecure : false}
           style={styles.inputStyle}
           onChangeText={handleChange}
           {...props}
         />
-        {/*{secureTextEntry ? (*/}
-        {/*  <TouchableOpacity onPress={() => setShowSecure(!showSecure)}>*/}
-        {/*    <IconSvgEye color={Colors.black_54} />*/}
-        {/*  </TouchableOpacity>*/}
-        {/*) : null}*/}
         {icon ? (
           <TouchableOpacity
             style={{marginLeft: iconPadding || 0}}
@@ -121,9 +103,10 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingRight: 16,
+    borderRadius: 8,
     backgroundColor: Colors.white,
-    borderBottomColor: Colors.light_grey,
-    borderBottomWidth: 1,
+    borderColor: Colors.blue,
+    borderWidth: 1,
   },
   shadowInput: {
     shadowOffset: {width: 0, height: 2},

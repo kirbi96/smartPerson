@@ -62,7 +62,7 @@ export const Button = (props: IButtonProps) => {
       {!loading && startIcon}
       {!loading ? (
         <Text
-          Ag={AgEnum.Description}
+          Ag={AgEnum.Body}
           color={color}
           style={{marginLeft: startIcon ? 8 : 0, marginRight: endIcon ? 8 : 0}}>
           {title.toUpperCase()}
@@ -79,14 +79,14 @@ const styles = StyleSheet.create({
   default: {
     height: 48,
     paddingHorizontal: 12,
-    borderRadius: 4,
+    borderRadius: 12,
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
   },
 
   [ButtonType.Filled]: {
-    backgroundColor: Colors.leaf,
+    backgroundColor: Colors.blue,
   },
   [`${ButtonType.Filled}_Disabled`]: {
     backgroundColor: Colors.warm_grey,

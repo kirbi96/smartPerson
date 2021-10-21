@@ -3,6 +3,8 @@ import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
 import {Colors} from '../../../../styles/Colors';
 import {TaskHelper} from '../../../../helpers/TaskHelper';
 import {AgEnum, Text} from '../../../../components/ui/Text';
+import Navigation from '../../../../base/Navigation';
+import {screens} from '../../../../navigation/consts/screens';
 
 interface ITaskLevel {
   tasks: any;
@@ -12,6 +14,10 @@ interface ITaskLevel {
 
 export const TaskLevel = (props: ITaskLevel) => {
   const {tasks, level, color} = props;
+
+  const handleNavigateToScreen = (taskId: string) => {
+    Navigation.navigate(screens.TASK_IN, {taskId});
+  };
 
   return (
     <View style={styles.container}>
@@ -23,7 +29,7 @@ export const TaskLevel = (props: ITaskLevel) => {
           <View style={[styles.taskBorder, {borderColor: Colors.gray300}]}>
             <TouchableOpacity
               style={[styles.taskContainer, {backgroundColor: color}]}
-              onPress={() => {}}>
+              onPress={() => handleNavigateToScreen('taskId')}>
               <Image
                 style={{width: 46, height: 46}}
                 source={require('../../../../assets/images/car.png')}
