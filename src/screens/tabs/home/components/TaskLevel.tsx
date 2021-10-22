@@ -35,8 +35,8 @@ export const TaskLevel = (props: ITaskLevel) => {
                 source={require('../../../../assets/images/car.png')}
               />
               <View style={styles.crown}>
-                <Text style={styles.taskNumber} Ag={AgEnum.Description}>
-                  1
+                <Text style={styles.taskNumber} Ag={AgEnum.Body}>
+                  12
                 </Text>
                 <Image
                   style={{width: 20, height: 26}}
@@ -100,17 +100,20 @@ const styles = StyleSheet.create({
   taskNumber: {
     position: 'absolute',
     zIndex: 2,
-    top: 6,
-    left: 8,
+    top: 3,
+    left: 3,
   },
   endIcon: {
     width: 80,
     height: 80,
   },
   bottomContainer: {
+    width: '70%',
     marginTop: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: Colors.gray300,
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     alignItems: 'flex-end',
   },
 });
